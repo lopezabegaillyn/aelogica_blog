@@ -1,6 +1,38 @@
-<h1>Edit article</h1>
-<%= render 'form' %>
- 
-<%= form_for(@article) do |f| %>
-<%= link_to 'Back', articles_path %>
-<% end %>
+<div>
+    <br> 
+    <br>
+    <div class = "container">
+       <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+                <div class = "jumbotron">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                            <div class="page-heading">
+                                <h1>Edit Article</h1>
+                                <hr class="small">
+                            <!--<span class="subheading">This is what I do.</span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+    <br>
+  
+            
+            <div class="myBackground">
+                <%= render 'form' %>
+                <%= form_for(@article) do |f| %>
+                <br>
+                <br> 
+
+            </div>
+            <br>
+                
+        <div class = "pull-right">
+            <button>
+                <%= link_to 'Back', articles_path %> 
+            </button> 
+            
+            </div>
+        <% end %>
+            
+</div>

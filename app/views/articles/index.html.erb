@@ -1,41 +1,69 @@
 <div>
-    
-    <br> <br>
-   <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
-        <div class="container">
-            <div class = "jumbotron">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <div class="page-heading">
-                            <h1>Listing Articles</h1>
-                            <hr class="small">
-                        <!--<span class="subheading">This is what I do.</span>-->
+    <br> 
+    <br>
+    <div class = "container">
+       <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+                <div class = "jumbotron">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                            <div class="page-heading">
+                                <h1>Listing Articles</h1>
+                                <hr class="small">
+                            <!--<span class="subheading">This is what I do.</span>-->
+                            </div>
                         </div>
                     </div>
                 </div>
+        </header>
+   
+    
+    
+    <br>
+  
+            <% @articles.each do |article| %>
+            <div class="myBackground">
+            <h1><%= article.title %></h1>
+            <p>
+              <td><%= article.text %></td>
+            </p>
+                <div>
+                    <span class="badge">Posted 2012-08-02 20:47:04</span>
+                    <div class="pull-right">
+                        <a class='btn btn-primary btn-xs' href="#">
+                            <span class="glyphicon glyphicon-zoom-in">
+                            <%= link_to 'Show', article_path(article) %>
+                            </span>
+                        </a> 
+                        <a class='btn btn-info btn-xs' href="#">
+                            <span class="glyphicon glyphicon-edit">
+                            <%= link_to 'Edit', edit_article_path(article) %>
+                            </span> 
+                        </a> 
+                         <a href="#" class="btn btn-danger btn-xs">         <span class="glyphicon glyphicon-remove">     <%= link_to 'Destroy', article_path(article),
+                                method: :delete, 
+                                data: 
+                                    {confirm: 'Are you sure?' } %>
+                            </span>
+                        </a>
+                       
+                    </div>         
+                 </div>
+            <br>
             </div>
-        </div>
-    </header>
+            <br>
+            <% end %>
+    </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
- 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>              
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article_path(article),
-            method: :delete, 
-            data: 
-                {confirm: 'Are you sure?' } %>
-        </td>
-            
-    </tr>
-  <% end %>
-</table>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </div>
