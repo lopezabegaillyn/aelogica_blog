@@ -1,0 +1,54 @@
+<% provide(:title, "Edit user") %>
+
+<div>
+    <br> 
+    <br>
+    <div class = "container">
+       <header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+                <div class = "jumbotron">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                            <div class="page-heading">
+                                <h1> EDIT PROFILE</h1>
+                                <hr class="small">
+                            <!--<span class="subheading">This is what I do.</span>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </header>
+    <br>
+  
+            
+            <div class="myBackground">
+             <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <%= form_for(@user) do |f| %>
+
+                  <%= f.label :name %>
+                  <%= f.text_field :name, class: 'form-control' %>
+
+                  <%= f.label :email %>
+                  <%= f.email_field :email, class: 'form-control' %>
+
+                  <%= f.label :password %>
+                  <%= f.password_field :password, class: 'form-control' %>
+
+                  <%= f.label :password_confirmation, "Confirmation" %>
+                  <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+                  <%= f.submit "Save changes", class: "btn btn-primary" %>
+                <% end %>
+              </div>
+            </div>
+            </div>
+            <br>
+                
+        <div class = "pull-right">
+            <button>
+                <%= link_to 'Back', user_path %> 
+            </button> 
+            
+            </div>
+            
+</div>
